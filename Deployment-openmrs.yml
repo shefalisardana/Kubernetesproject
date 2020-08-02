@@ -1,0 +1,22 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: openmrs
+specs:
+  replicas: 3
+  selector: 
+    matchLabels:
+      app: openmrs
+  template:
+    metadata:
+        labels:
+          app: openmrs
+  
+    spec:
+        containers:
+          - name: openmrs_customimage
+            image: shefalisardana/openmrs_customimage:1 
+            ports:
+             - containerPort: 80    
+
+    
