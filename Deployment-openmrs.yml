@@ -1,8 +1,8 @@
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: openmrs
-specs:
+spec:
   replicas: 3
   strategy:
     type: RollingUpdate
@@ -19,7 +19,7 @@ specs:
   
     spec:
         containers:
-          - name: openmrs_customimage
+          - name: openmrscustomimage
             image: shefalisardana/openmrs_customimage:1 
             ports:
              - containerPort: 80    
