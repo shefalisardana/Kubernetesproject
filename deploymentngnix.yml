@@ -1,16 +1,19 @@
 apiVersion: v1
-kind: Deployment
+kind: ReplicationController
 metadata:
-  name: ngnix
+  name: simple-rc     
 spec:
   replicas: 3
   selector:
-    matchLabels:
-      app: ngnix
+    app: ngnix
   template:
     metadata:
       name: ngnix
+      labels:
+        app: ngnix      
     spec:
-      container:
-      - name: ngnix
+      containers:
+      - name: ngniximage
         image: ngnix
+        ports:
+        - containerPort: 80
