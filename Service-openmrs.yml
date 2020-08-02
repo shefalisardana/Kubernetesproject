@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata: 
-  name: simple-Service
+  name: simpleservice
 spec: 
   selector:
       app: openmrs
@@ -9,5 +9,5 @@ spec:
   ports:
   - name: http
     port: 8080
-    NodePort: 30001
+    nodePort: 30001
     protocol: TCP 
