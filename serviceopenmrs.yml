@@ -4,10 +4,10 @@ metadata:
   name: simpleservice
 spec: 
   selector:
-      app: openmrs
+    app: openmrs
   type: NodePort
   ports:
-  - name: http
-    port: 8080
-    NodePort: 300001
-    protocol: TCP 
+    - name: http
+      port: 8080
+      nodePort: 30001
+      protocol: TCP 
