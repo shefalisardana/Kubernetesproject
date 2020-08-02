@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Deployment
+metadata:
+  name: ngnix
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: ngnix
+  template:
+    metadata:
+      name: ngnix
+    spec:
+      container:
+      - name: ngnix
+        image: ngnix
